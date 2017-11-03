@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/contribute">
+        <menu>
+            <item
+                android:id="@+id/nav_github"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/github" />
+        </menu>
+    </item>
+
+    <item android:title="@string/courtesy">
+        <menu>
+            <item
+                android:id="@+id/nav_cryptocompare"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/cryptocompare_licence" />
+        </menu>
+    </item>
+
+</menu>
