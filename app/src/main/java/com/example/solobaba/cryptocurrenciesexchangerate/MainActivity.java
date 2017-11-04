@@ -22,8 +22,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.solobaba.cryptocurrenciesexchangerate.RatesLedger.MoneyRate;
-
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -41,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
     SharedPreferences settings;
     int orderMode;
+    private Object GET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +159,7 @@ public class MainActivity extends AppCompatActivity
     public void downloadRates() {
         ratesLedger = new RatesLedger();
 
-        JsonObjectRequest requestNameAvatar = new JsonObjectRequest(Request.Method.GET, requestUrl, null,
+        JsonObjectRequest requestNameAvatar = new JsonObjectRequest(GET, requestUrl, null,
                 new Response.Listener<JSONObject>() {
 
                     @Override
@@ -197,8 +196,6 @@ public class MainActivity extends AppCompatActivity
                 mSwipeRefreshLayout.setRefreshing(false);
             }
 
-
-
         });
 
         rQueue.add(requestNameAvatar);
@@ -209,10 +206,6 @@ public class MainActivity extends AppCompatActivity
         super.onStop();
         rQueue.cancelAll(this);
     }
-
-
-
-
 
     @Override
     public void onBackPressed() {
@@ -260,7 +253,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_github) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/"));
             startActivity(browserIntent);
         } else if (id == R.id.nav_cryptocompare) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cryptocompare.com/api/#introduction"));

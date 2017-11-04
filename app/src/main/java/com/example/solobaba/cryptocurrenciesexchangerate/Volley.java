@@ -7,7 +7,8 @@ import android.content.Context;
  */
 
 class Volley {
-    public static void newRequestQueue(Context applicationContext) {
+    public static RequestQueue newRequestQueue(Context applicationContext) {
 
+        return null;
     }
 }
